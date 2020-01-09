@@ -21,11 +21,8 @@ function sortName() {
     const countryA = a.country.toUpperCase();
     const countryB = b.country.toUpperCase();
     let comparison = 0;
-    if (countryA > countryB) {
-      comparison = 1;
-    } else if (countryA < countryB) {
-      comparison = -1;
-    }
+    if (countryA > countryB) comparison = 1;
+    else if (countryA < countryB) comparison = -1;
     return comparison * -1;
   }
   dataCountry.sort(compare);
@@ -36,11 +33,8 @@ function sortHeight() {
     const heightA = a.height;
     const heightB = b.height;
     let comparison = 0;
-    if (heightA > heightB) {
-      comparison = 1;
-    } else if (heightA < heightB) {
-      comparison = -1;
-    }
+    if (heightA > heightB) comparison = 1;
+    else if (heightA < heightB) comparison = -1;
     return comparison;
   }
   dataCountry.sort(compare);
@@ -51,8 +45,7 @@ function filterCountry() {
     return (
       x.height >= 160 &&
       x.height <= 170 &&
-      (x.country.toUpperCase().substr(0, 1) === "B" ||
-        x.country.toUpperCase().substr(0, 1) === "C")
+      (x.country[0].toUpperCase() === "B" || x.country[0].toUpperCase() === "C")
     );
   });
 }
