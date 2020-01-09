@@ -18,32 +18,35 @@ function separateNumbers() {
 }
 
 function translateToEng() {
+  const dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   let str = originalString;
   str = str.replace(/thu/g, "on");
   const numbersInStr = separateNumbers();
   numbersInStr.forEach(x => {
-    switch (x) {
-      case "2":
-        str = str.replace(`${x}`, "Monday");
-        break;
-      case "3":
-        str = str.replace(`${x}`, "Tuesday");
-        break;
-      case "4":
-        str = str.replace(`${x}`, "Wednesday");
-        break;
-      case "5":
-        str = str.replace(`${x}`, "Thursday");
-        break;
-      case "6":
-        str = str.replace(`${x}`, "Friday");
-        break;
-      case "7":
-        str = str.replace(`${x}`, "Saturday");
-        break;
-      default:
-        break;
-    }
+    console.log(x)
+    str = str.replace(`${x}`, `${dayNames[x-2]}`);
+    // switch (x) {
+    //   case "2":
+    //     str = str.replace(`${x}`, "Monday");
+    //     break;
+    //   case "3":
+    //     str = str.replace(`${x}`, "Tuesday");
+    //     break;
+    //   case "4":
+    //     str = str.replace(`${x}`, "Wednesday");
+    //     break;
+    //   case "5":
+    //     str = str.replace(`${x}`, "Thursday");
+    //     break;
+    //   case "6":
+    //     str = str.replace(`${x}`, "Friday");
+    //     break;
+    //   case "7":
+    //     str = str.replace(`${x}`, "Saturday");
+    //     break;
+    //   default:
+    //     break;
+    // }
   });
   console.log(str);
 }
