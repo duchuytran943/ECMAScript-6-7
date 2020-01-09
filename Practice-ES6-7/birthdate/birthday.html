@@ -1,58 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Birthday</title>
-    <script type="text/javascript">
-      function gettext() {
-        const monthNames = [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
-          "August",
-          "September",
-          "October",
-          "November",
-          "December"
-        ];
-        console.log(typeof document.getElementById("birthday").value)
-        //birthday
-        const birthday = new Date(document.getElementById("birthday").value);
-        let dayBirthday = birthday.getDate();
-        let monthIndexBirthday = birthday.getMonth();
-        let yearBirthday = birthday.getFullYear();
-        //nowDate
-        const nowDate = new Date();
-        let dayNow = nowDate.getDate();
-        let monthIndexNow = nowDate.getMonth();
-        let yearNow = nowDate.getFullYear();
 
-        let numbersOfBirthday = yearNow - yearBirthday;
-        if (
-          monthIndexNow < monthIndexBirthday ||
-          (monthIndexNow == monthIndexBirthday && dayNow < dayBirthday)
-        ) {
-          numbersOfBirthday -= 1;
-        }
-        if (numbersOfBirthday < 0) {
-          alert(
-            `Please enter date less than ${monthNames[monthIndexNow]} - ${dayNow} - ${yearNow}`
-          );
-        } else {
-          alert(`Numbers of birth: ${numbersOfBirthday}`);
-        }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Birthday</title>
+  <script type="text/javascript">
+    function gettext() {
+      const monthNames = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ];
+      console.log(typeof document.getElementById("birthday").value)
+      //birthday
+      const birthday = new Date(document.getElementById("birthday").value);
+      let dayBirthday = birthday.getDate();
+      let monthIndexBirthday = birthday.getMonth();
+      let yearBirthday = birthday.getFullYear();
+      //nowDate
+      const nowDate = new Date();
+      let dayNow = nowDate.getDate();
+      let monthIndexNow = nowDate.getMonth();
+      let yearNow = nowDate.getFullYear();
+
+      let numbersOfBirthday = yearNow - yearBirthday;
+      if (
+        monthIndexNow < monthIndexBirthday ||
+        (monthIndexNow == monthIndexBirthday && dayNow < dayBirthday)
+      ) {
+        numbersOfBirthday -= 1;
       }
-    </script>
-  </head>
-  <body>
-    <label for="birthday"></label>
-    <input type="date" id="birthday" />
-    <input type="button" value="clickhere" onclick="gettext()" />
-  </body>
+      if (numbersOfBirthday < 0) {
+        // alert(
+        //   `Please enter date less than ${monthNames[monthIndexNow]} - ${dayNow} - ${yearNow}`
+        // );
+        document.getElementById('display_result').innerText = `Please enter date less than ${monthNames[monthIndexNow]} - ${dayNow} - ${yearNow}`
+
+      } else {
+        // alert(`Numbers of birth: ${numbersOfBirthday}`);
+        document.getElementById('display_result').innerText = `Numbers of birth: ${numbersOfBirthday}`
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <label for="birthday"></label>
+  <input type="date" id="birthday" />
+  <input type="button" value="click here" onclick="gettext()" />
+  <h2 id="display_result">Numbers of birth:</h2>
+</body>
+
 </html>
