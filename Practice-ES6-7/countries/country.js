@@ -52,10 +52,13 @@ function filterCountry() {
 
 function sumHeightOfCase3() {
   const result = filterCountry();
-  const sum = result.reduce((a, b) => ({
-    country: a.country,
-    height: Number(a.height) + Number(b.height)
-  })).height;
+  // const sum = result.reduce((a, b) => ({
+  //   country: a.country,
+  //   height: Number(a.height) + Number(b.height)
+  // })).height;
+  const sum = result.reduce((a, b) => {
+    return (a + Number(b.height))
+  }, 0)
   console.log("Sum Height Of Case 3: ", sum);
 }
 
