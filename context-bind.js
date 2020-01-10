@@ -22,3 +22,4 @@
   // nếu không có bind(cat) thì say() sẽ My name is undefine
   say(); // My name is tom
 }
+

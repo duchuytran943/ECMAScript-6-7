@@ -43,9 +43,9 @@ function sortName() {
     const countryA = a.country.toUpperCase();
     const countryB = b.country.toUpperCase();
     let comparison = 0;
-    if (countryA > countryB) comparison = 1;
-    else if (countryA < countryB) comparison = -1;
-    return comparison * -1;
+    if (countryA > countryB) comparison = -1;
+    else if (countryA < countryB) comparison = 1;
+    return comparison;
   }
   dataCountry.sort(compare);
   renderLi(dataCountry, "country", "height");
