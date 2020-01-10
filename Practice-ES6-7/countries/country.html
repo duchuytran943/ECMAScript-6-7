@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Country</title>
+    <script src="./js-country.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Country</title>
-  <script src="./js-country.js"></script>
-</head>
-
-<body>
-  <button onclick="sortName()">Sort Name</button>
-  <div id="result">Result:</div>
-  <ul id="myListCountry">
-  </ul>
-</body>
-
+  <body>
+    <button onclick="sortName()">Sort Name</button>
+    <button onclick="sortHeight()">Sort Height</button>
+    <button onclick="filterCountryDisplay()">Filter Country</button>
+    <button onclick="sumHeightOfFilter()">Filter Country</button>
+    <h3 id="result">Result:</h3>
+    <ul id="myListCountry"></ul>
+  </body>
 </html>
